@@ -34,7 +34,10 @@ args = gymutil.parse_arguments(
     custom_parameters=[
         {"name": "--asset_filename", "type": str, "help": "Asset filename"},
         {"name": "--speed_scale", "type": float, "default": 1.0, "help": "Animation speed scale"},
-        {"name": "--show_axis", "action": "store_true", "help": "Visualize DOF axis"}])
+        {"name": "--show_axis", "action": "store_true", "help": "Visualize DOF axis"},
+        {"name": "--save_frames", "action": "store_true", "help": "Save rendered frames to disk"},
+        {"name": "--save_dir", "type": str, "default": os.path.join(os.path.dirname(os.path.abspath(__file__)), "joint_monkey_frames"), "help": "Directory to save frames"},
+        {"name": "--max_frames", "type": int, "default": 300, "help": "Max frames to save before auto-quit"}])
 
 if os.path.exists(args.asset_filename):
     asset_descriptor = AssetDesc(args.asset_filename, False)
@@ -228,6 +231,11 @@ anim_state = ANIM_SEEK_LOWER
 current_dof = 0
 print("Animating DOF %d ('%s')" % (current_dof, dof_names[current_dof]))
 
+frame_count = 0
+if args.save_frames:
+    os.makedirs(args.save_dir, exist_ok=True)
+    print("Saving frames to '%s' (max %d frames)" % (args.save_dir, args.max_frames))
+
 while not gym.query_viewer_has_closed(viewer):
 
     # step the physics
@@ -279,6 +287,14 @@ while not gym.query_viewer_has_closed(viewer):
     # update the viewer
     gym.step_graphics(sim)
     gym.draw_viewer(viewer, sim, True)
+
+    if args.save_frames:
+        frame_name = os.path.join(args.save_dir, "frame_%06d.png" % frame_count)
+        gym.write_viewer_image_to_file(viewer, frame_name)
+        frame_count += 1
+        if frame_count >= args.max_frames:
+            print("Reached max frames (%d), stopping." % args.max_frames)
+            break
 
     # Wait for dt to elapse in real time.
     # This synchronizes the physics simulation with the rendering rate.

@@ -20,4 +20,6 @@ task2 = Draw3DDots(task_name="test2",
     dots=np.array([[0, 0, 0], [0, 0, 1], [0, 1, 1], [0, 1, 0]]), color="red")
 task3 = BasePlotterTasks([task, task2])
 plotter = Matplotlib3DPlotter(cast(BasePlotterTask, task3))
+# 必须用 plotter.fig 保存，否则 plt.savefig 可能保存到错误的（空白）figure
+plotter.fig.savefig('/home/yued/TokenHSI/lpanlib/poselib/visualization/tests/test_plotter_output.png', dpi=150)
 plt.show()

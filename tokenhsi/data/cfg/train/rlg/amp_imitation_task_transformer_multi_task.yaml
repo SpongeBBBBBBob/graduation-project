@@ -1,27 +1,35 @@
+# =============================================================================
+# 多任务 AMP + Transformer 训练配置
+# (AMP Imitation Task Transformer Multi-Task)
+# =============================================================================
+# 结合 AMP 对抗模仿学习与 Transformer 策略网络，支持多任务（轨迹/坐姿/搬运/攀爬）联合训练
+
 params:
-  seed: -1
+  seed: -1  # 随机种子，-1 表示随机生成
 
   algo:
-    name: trans
+    name: trans  # 算法名称：trans（Transformer 相关）
 
   model:
-    name: amp
+    name: amp   # 模型类型：AMP（Adversarial Motion Priors 对抗运动先验）
 
   network:
     name: amp_transformer_multi_task
-    separate: True
+    separate: True  # 策略与价值网络是否分离
 
     network_structure_id: 2
 
+    # --- Transformer 编码器参数 ---
     transformer:
-      num_features: 64
-      tokenizer_units: [256, 128]
-      num_layers: 4
-      layer_num_heads: 2
-      layer_dim_feedforward: 512
-      use_pos_embed: False
-      extra_mlp_units: [1024, 512]
+      num_features: 64           # 特征维度
+      tokenizer_units: [256, 128]  # Tokenizer MLP 层维度
+      num_layers: 4             # Transformer 层数
+      layer_num_heads: 2        # 每层注意力头数
+      layer_dim_feedforward: 512  # 前馈网络维度
+      use_pos_embed: False      # 是否使用位置编码
+      extra_mlp_units: [1024, 512]  # 额外 MLP 层（Transformer 输出后）
 
+    # --- 动作空间输出层 ---
     space:
       continuous:
         mu_activation: None
@@ -31,19 +39,21 @@ params:
         sigma_init:
           name: const_initializer
           val: -2.9
-        fixed_sigma: True
+        fixed_sigma: True   # 固定动作标准差（不学习）
         learn_sigma: False
 
+    # --- 策略/价值 MLP 主干 ---
     mlp:
       units: [2048, 1024, 512]
       activation: relu
-      d2rl: False
+      d2rl: False  # 是否使用 D2RL 架构（深度确定性策略）
 
       initializer:
         name: default
       regularizer:
         name: None
 
+    # --- AMP 判别器网络 ---
     disc:
       units: [1024, 512]
       activation: relu
@@ -53,51 +63,58 @@ params:
 
   load_checkpoint: False
 
+  # --- 训练超参数 ---
   config:
     name: Humanoid
     env_name: rlgpu
     multi_gpu: False
     ppo: True
     mixed_precision: False
-    normalize_input: True # Pay attention to this! We still perform normalization in amp_agent, not in network.
+    # 注意：归一化在 amp_agent 中执行，而非在 network 中
+    normalize_input: True
     normalize_value: True
     reward_shaper:
       scale_value: 1
     normalize_advantage: True
-    gamma: 0.99
-    tau: 0.95
+
+    # --- PPO 核心参数 ---
+    gamma: 0.99           # 折扣因子
+    tau: 0.95             # GAE  lambda 参数
     learning_rate: 2e-5
     lr_schedule: constant
     score_to_win: 20000
     max_epochs: 1000000
-    save_best_after: 50
+    save_best_after: 50   # 至少训练多少 epoch 后才保存最佳模型
     save_frequency: 1000
     save_intermediate: False
     print_stats: True
-    grad_norm: 1.0
+    grad_norm: 1.0        # 梯度裁剪范数
     entropy_coef: 0.0
     truncate_grads: False
     ppo: True
-    e_clip: 0.2
-    horizon_length: 32
+    e_clip: 0.2           # PPO 裁剪范围
+    horizon_length: 32    # 每次更新的步数（rollout 长度）
     minibatch_size: 16384
-    mini_epochs: 6
-    critic_coef: 5
+    mini_epochs: 6        # 每次更新的 PPO 内层迭代次数
+    critic_coef: 5        # 价值损失系数
     clip_value: False
-    seq_len: 4
-    bounds_loss_coef: 10
-    amp_obs_demo_buffer_size: 200000
-    amp_replay_buffer_size: 200000
-    amp_replay_keep_prob: 0.01
+    seq_len: 4            # 序列长度（用于 Transformer）
+    bounds_loss_coef: 10  # 动作边界损失系数
+
+    # --- AMP 判别器参数 ---
+    amp_obs_demo_buffer_size: 200000  # 专家演示观测缓冲区大小
+    amp_replay_buffer_size: 200000    # 策略生成观测的 replay 缓冲区大小
+    amp_replay_keep_prob: 0.01        # replay 中保留策略样本的比例（其余为专家）
     amp_batch_size: 512
     amp_minibatch_size: 4096
-    disc_coef: 5
-    disc_logit_reg: 0.01
-    disc_grad_penalty: 5
-    disc_reward_scale: 2
+    disc_coef: 5              # 判别器损失系数
+    disc_logit_reg: 0.01      # 判别器 logit 正则化
+    disc_grad_penalty: 5      # 判别器梯度惩罚（WGAN-GP 风格）
+    disc_reward_scale: 2      # 判别器奖励缩放
     disc_weight_decay: 0.0001
     normalize_amp_input: True
-    enable_eps_greedy: False # for training a better disc
+    enable_eps_greedy: False  # 是否对判别器使用 epsilon-greedy（可提升判别器质量）
 
-    task_reward_w: 0.5
-    disc_reward_w: 0.5
+    # --- 多任务奖励权重 ---
+    task_reward_w: 0.5   # 任务奖励权重
+    disc_reward_w: 0.5   # AMP 判别器奖励权重（模仿风格）

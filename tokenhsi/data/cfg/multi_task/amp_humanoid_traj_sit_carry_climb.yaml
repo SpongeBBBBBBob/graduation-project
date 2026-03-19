@@ -1,95 +1,109 @@
-# if given, will override the device setting in gym. 
-env: 
-  numEnvs: 4096
-  envSpacing: 5
-  episodeLength: 600
-  episodeLengthShort: 300
-  isFlagrun: False
-  enableDebugVis: False
-  
-  pdControl: True
-  powerScale: 1.0
-  controlFrequencyInv: 2 # 30 Hz
-  stateInit: "Random"
-  hybridInitProb: 0.5
-  numAMPObsSteps: 10
+# =============================================================================
+# 多任务人形机器人环境配置：轨迹跟踪 + 坐姿 + 搬运 + 攀爬
+# (AMP Humanoid Trajectory Sit Carry Climb)
+# =============================================================================
+# 若在命令行指定了 device，将覆盖 gym 中的设备设置
 
-  localRootObs: True # amp disc obs
-  localRootObsPolicy: False # policy obs
-  rootHeightObs: False # amp disc obs
-  rootHeightObsPolicy: False # policy obs
-  keyBodies: ["right_hand", "left_hand", "right_foot", "left_foot"]
-  contactBodies: ["right_foot", "left_foot"]
-  terminationHeight: 0.15
-  enableEarlyTermination: True
+env:
+  # --- 仿真规模 ---
+  numEnvs: 4096              # 并行环境数量，越大训练越快但显存占用越高
+  envSpacing: 5              # 环境之间的间距（米），避免相邻环境碰撞
+  episodeLength: 600         # 完整回合长度（仿真步数）
+  episodeLengthShort: 300    # 短回合长度，用于某些任务的早停
+  isFlagrun: False           # 是否为 flagrun 模式
+  enableDebugVis: False      # 是否启用调试可视化
 
-  enableSelfCollisionDetection: True
-  enableTrackInitState: False
+  # --- 控制与状态初始化 ---
+  pdControl: True            # 使用 PD 控制器（比例-微分）控制关节
+  powerScale: 1.0            # 电机功率缩放系数
+  controlFrequencyInv: 2     # 控制频率倒数，2 表示 30Hz（60/2）
+  stateInit: "Random"        # 初始状态：Random 随机 / Default 默认
+  hybridInitProb: 0.5       # 混合初始化概率（随机与默认各占一半）
+  numAMPObsSteps: 10        # AMP 判别器观测的历史步数（用于动作风格判别）
 
-  mode: "train"
-  
+  # --- 观测空间配置 ---
+  localRootObs: True        # AMP 判别器：是否使用局部根坐标系观测
+  localRootObsPolicy: False # 策略网络：是否使用局部根坐标系观测
+  rootHeightObs: False      # AMP 判别器：是否包含根高度观测
+  rootHeightObsPolicy: False # 策略网络：是否包含根高度观测
+  keyBodies: ["right_hand", "left_hand", "right_foot", "left_foot"]  # 关键身体部位（用于观测/奖励）
+  contactBodies: ["right_foot", "left_foot"]  # 接触检测部位（用于触地判断）
+  terminationHeight: 0.15   # 根高度低于此值则回合终止（摔倒判定）
+  enableEarlyTermination: True  # 是否启用早停（如成功完成任务时提前结束）
+
+  # --- 物理与追踪 ---
+  enableSelfCollisionDetection: True   # 是否检测自碰撞
+  enableTrackInitState: False          # 是否追踪初始状态
+
+  mode: "train"  # 运行模式：train 训练 / eval 评估
+
+  # --- 技能列表（按任务分组）---
+  # loco: locomotion 行走；loco_sit/sit: 坐姿；loco_carry/omomo/pickUp/carryWith/putDown: 搬运；loco_climb/climb/climbNoRSI: 攀爬
   skill: [
-    "loco", 
+    "loco",
     "loco_sit", "sit",
-    "loco_carry", "omomo", "pickUp", "carryWith", "putDown", 
+    "loco_carry", "omomo", "pickUp", "carryWith", "putDown",
     "loco_climb", "climb", "climbNoRSI"
   ]
+  # 各技能在判别器中的采样概率（与 skill 一一对应）
   skillDiscProb: [
     0.1,
     0.1, 0.2,
     0.1, 0.1, 0.05, 0.0, 0.05,
     0.1, 0.1, 0.1,
   ]
-  commonSkill: ""
-  enableTaskSpecificDisc: True
+  commonSkill: ""              # 通用技能（空表示无）
+  enableTaskSpecificDisc: True # 是否启用任务特定的判别器
 
-  # multi tasks
-  enableTaskObs: True
-  enableTaskMaskObs: True
-  enableApplyMaskOnTaskObs: True
+  # --- 多任务配置 ---
+  enableTaskObs: True          # 是否将任务 ID 加入观测
+  enableTaskMaskObs: True      # 是否启用任务掩码观测
+  enableApplyMaskOnTaskObs: True  # 是否对任务观测应用掩码
 
-  task: ["traj", "sit", "carry", "climb"]
-  taskInitProb: [0.1, 0.3, 0.3, 0.3]
+  task: ["traj", "sit", "carry", "climb"]  # 任务类型：轨迹、坐姿、搬运、攀爬
+  taskInitProb: [0.1, 0.3, 0.3, 0.3]       # 各任务的初始采样概率
 
-  # IET: Interaction Early Termination
+  # --- IET: Interaction Early Termination（交互早停）---
+  # 当智能体与物体交互达到一定成功率时提前结束回合
   enableIET: True
-  maxIETSteps: 60
-  successThreshold: 0.2
+  maxIETSteps: 60              # IET 生效的最大步数
+  successThreshold: 0.2        # 成功阈值（用于判断是否提前终止）
  
+  # --- 轨迹跟踪任务 (traj) ---
   traj:
-    numTrajSamples: 10
-    trajSampleTimestep: 0.5 # 10 Hz
-    speedMin: 0.5
-    speedMax: 1.5
-    accelMax: 2.0
-    sharpTurnProb: 0.02
-    sharpTurnAngle: 1.57
-    failDist: 4.0
-    
+    numTrajSamples: 10        # 轨迹采样点数量
+    trajSampleTimestep: 0.5   # 轨迹采样时间间隔（秒），0.5 即 2Hz
+    speedMin: 0.5             # 目标速度下限（m/s）
+    speedMax: 1.5             # 目标速度上限（m/s）
+    accelMax: 2.0             # 最大加速度（m/s²）
+    sharpTurnProb: 0.02       # 急转弯概率
+    sharpTurnAngle: 1.57      # 急转弯角度（弧度，约 90°）
+    failDist: 4.0             # 与轨迹偏离超过此距离则失败（米）
+
     skill: ["loco"]
     skillInitProb: [1.0]
 
     eval:
-      # override env settings
-      ## if the humanoid's root joint is close enough to the traj's final tar pos, 
-      ## the episode will be treated as successful.
+      # 评估时覆盖的环境设置
+      # 若人形根关节与轨迹终点足够接近，则视为成功
       successThreshold: 0.3
       skill: ["loco"]
       skillInitProb: [1.0]
-  
+
+  # --- 坐姿任务 (sit) ---
   sit:
-    # object
+    # 椅子物体配置
     objDatasetDir: "dataset_sit/objects"
-    objCategories: 
+    objCategories:
       - "StraightChair_Normal"
 
+    # 坐姿速度惩罚（鼓励平稳坐下）
     sit_vel_penalty: True
     sit_vel_pen_coeff: 0.5
     sit_vel_pen_threshold: 1.3
     sit_ang_vel_pen_coeff: 0.5
     sit_ang_vel_pen_threshold: 3.0
 
-    # IET: Interaction Early Termination
     enableIET: True
 
     skill: ["loco_sit", "sit"]
@@ -100,21 +114,22 @@ env:
       skill: ["loco_sit", "sit"]
       skillInitProb: [1.0, 0.0]
 
+  # --- 攀爬任务 (climb) ---
   climb:
-    # object
+    # 攀爬物体配置（箱子、柜子、方桌等）
     objDatasetDir: "dataset_amass_climb/objects"
-    objCategories: 
+    objCategories:
       - "Box"
       - "Cabinet"
       - "Table_Square"
-    
+
+    # 攀爬速度惩罚
     climb_vel_penalty: True
     climb_vel_pen_coeff: 1.0
     climb_vel_pen_threshold: 1.3
 
-    # IET: Interaction Early Termination
     enableIET: True
-    
+
     skill: ["loco_climb", "climb", "climbNoRSI"]
     skillInitProb: [0.5, 0.5, 0.0]
 
@@ -123,24 +138,28 @@ env:
       skill: ["loco_climb", "climb", "climbNoRSI"]
       skillInitProb: [1.0, 0.0, 0.0]
 
+  # --- 搬运任务 (carry) ---
   carry:
-    onlyVelReward: True
-    onlyHeightHandHeldReward: False
+    onlyVelReward: True           # 是否仅使用速度奖励
+    onlyHeightHandHeldReward: False  # 是否仅使用手持高度奖励
 
-    box_vel_penalty: True # to avoid stiff grasping
+    # 箱子速度惩罚（避免僵硬抓握）
+    box_vel_penalty: True
     box_vel_pen_coeff: 1.0
     box_vel_pen_threshold: 2.5
 
+    # 搬运箱子参数
     box:
       build:
-        baseSize: [0.4, 0.4, 0.4] # unit: m
+        baseSize: [0.4, 0.4, 0.4]  # 基准尺寸（米）
         randomSize: True
-        randomModeEqualProportion: True
-        scaleRangeX: [0.5, 1.5] # default range if randomModeEqualProportion: True
+        randomModeEqualProportion: True  # 各维度等比例随机
+        scaleRangeX: [0.5, 1.5]
         scaleRangeY: [0.5, 1.5]
         scaleRangeZ: [0.5, 1.5]
-        scaleSampleInterval: 0.125 # 0.05m
+        scaleSampleInterval: 0.125  # 尺寸采样间隔（米）
 
+        # 评估时使用的固定尺寸列表
         testSizes:
         - [0.22, 0.22, 0.22]
         - [0.27, 0.27, 0.27]
@@ -156,8 +175,8 @@ env:
         randomRot: True
         randomHeight: True
         randomHeightProb: 0.5
-        maxTopSurfaceHeight: 1.2
-        minBottomSurfaceHeight: 0.0
+        maxTopSurfaceHeight: 1.2   # 放置表面最大高度（米）
+        minBottomSurfaceHeight: 0.0 # 放置表面最小高度（米）
 
     skill: ["loco_carry", "pickUp", "carryWith", "putDown", "omomo"]
     skillInitProb: [0.5, 0.1, 0.3, 0.1, 0.0]
@@ -167,32 +186,36 @@ env:
       skill: ["loco_carry", "pickUp", "carryWith", "putDown", "omomo"]
       skillInitProb: [1.0, 0.0, 0.0, 0.0, 0.0]
 
-  # power reward
+  # --- 能耗奖励（鼓励节能运动）---
   power_reward: True
   power_coefficient: 0.0005
 
+  # --- 资源路径 ---
   asset:
     assetRoot: "tokenhsi/data/assets"
     assetFileName: "mjcf/phys_humanoid_v3.xml"
 
+  # --- 地面物理属性 ---
   plane:
     staticFriction: 1.0
     dynamicFriction: 1.0
     restitution: 0.0
 
+# --- PhysX 仿真参数 ---
 sim:
   substeps: 2
   physx:
     num_threads: 4
-    solver_type: 1  # 0: pgs, 1: tgs
+    solver_type: 1   # 0: PGS 投影高斯-赛德尔, 1: TGS 时序高斯-赛德尔（更适合 GPU）
     num_position_iterations: 4
     num_velocity_iterations: 0
-    contact_offset: 0.02
+    contact_offset: 0.02      # 接触检测偏移
     rest_offset: 0.0
     bounce_threshold_velocity: 0.2
     max_depenetration_velocity: 10.0
     default_buffer_size_multiplier: 10.0
 
+  # Flex 软体物理引擎参数（本配置主要使用 PhysX）
   flex:
     num_inner_iterations: 10
     warm_start: 0.25

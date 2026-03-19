@@ -85,9 +85,14 @@ class BaseTask():
 
         # save imgs
         from datetime import datetime as dt
-        self.save_video = False
+        self.save_frames = getattr(cfg["args"], "save_frames", False)
+        self.max_frames = getattr(cfg["args"], "max_frames", 300)
+        self.save_video = self.save_frames
         self.save_video_dir = os.path.join(cfg["args"].output_path, "imgs/{}/".format(dt.now().strftime("%Y-%m-%d_%H-%M-%S")))
+        self.save_frames_dir = os.path.join(self.save_video_dir, "frames")  # 帧图片存于子文件夹
         self.save_img_count = 0
+        if self.save_frames:
+            os.makedirs(self.save_frames_dir, exist_ok=True)
 
         # whether show lines
         self._show_lines_flag = True
@@ -165,8 +170,12 @@ class BaseTask():
         if self.save_video and self.viewer is not None:
             num = str(self.save_img_count)
             num = '0' * (6 - len(num)) + num
-            self.gym.write_viewer_image_to_file(self.viewer, f"{self.save_video_dir}/frame_{num}.png")
+            out_dir = self.save_frames_dir if self.save_frames else self.save_video_dir
+            self.gym.write_viewer_image_to_file(self.viewer, f"{out_dir}/frame_{num}.png")
             self.save_img_count += 1
+            if self.save_frames and self.save_img_count >= self.max_frames:
+                print("Saved {} frames to {}, exiting.".format(self.save_img_count, self.save_frames_dir))
+                sys.exit(0)
         return
 
     def get_states(self):
