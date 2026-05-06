@@ -1,0 +1,38 @@
+motions:
+  loco_run:
+  - file: motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C11 -  run turn left (90)_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C13 -  run turn left (135)_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C2 - Run to stand_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C3 - Run_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C4 - Run to walk1_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C5 - walk to run_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Male2Running_c3d+__+C11 - run turn left 90_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/ACCAD/ACCAD+__+Male2Running_c3d+__+C17 - run change direction_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/CMU/CMU+__+09+__+09_01_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/CMU/CMU+__+09+__+09_05_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/CMU/CMU+__+09+__+09_06_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/CMU/CMU+__+09+__+09_09_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/CMU/CMU+__+09+__+09_11_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/HumanEva/HumanEva+__+S1+__+Jog_1_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/HumanEva/HumanEva+__+S2+__+Jog_1_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/HumanEva/HumanEva+__+S3+__+Jog_1_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/KIT/KIT+__+3+__+walking_run02_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0
+  - file: motions/KIT/KIT+__+3+__+walking_run04_poses/phys_humanoid_v3/ref_motion.npy
+    weight: 1.0

@@ -17,7 +17,13 @@ def process_amass_seq(fname, output_path):
     trans = raw_params["trans"]
 
     # downsample from 120hz to 30hz
-    source_fps = raw_params["mocap_frame_rate"]
+    # AMASS Phase II uses "mocap_frame_rate"; SMPL+H G uses "mocap_framerate".
+    source_fps = raw_params.get("mocap_frame_rate", raw_params.get("mocap_framerate"))
+    if source_fps is None:
+        raise KeyError(
+            f"Neither 'mocap_frame_rate' nor 'mocap_framerate' found in {fname}; "
+            f"available keys: {list(raw_params.keys())}"
+        )
     target_fps = 30
     skip = int(source_fps // target_fps)
     poses = poses[::skip]

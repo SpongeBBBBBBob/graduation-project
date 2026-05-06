@@ -1,0 +1,278 @@
+Importing module 'gym_38' (/home/yued/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /home/yued/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.0.0.post304
+Device count 10
+/home/yued/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /home/yued/.cache/torch_extensions/py38_cu118 as PyTorch extensions root...
+Emitting ninja build file /home/yued/.cache/torch_extensions/py38_cu118/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+2026-05-06 15:20:15,099 - INFO - logger - logger initialized
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Error: FBX library failed to load - importing FBX data will not succeed. Message: No module named 'fbx'
+FBX tools must be installed from https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html
+MOVING MOTION DATA TO GPU, USING CACHE: True
+Importing module 'rlgpu_38' (/home/yued/isaacgym/python/isaacgym/_bindings/linux-x86_64/rlgpu_38.so)
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+Setting seed: 4867
+Started to play
+Loading 1/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B1_-_stand_to_walk_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 2/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B2_-_walk_to_stand_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 3/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B2_-_walk_to_stand_t2_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 4/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B3_-_walk1_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 5/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B9_-_walk_turn_left_(90)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 6/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B10_-_walk_turn_left_(45)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 7/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B11_-_walk_turn_left_(135)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 8/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B12_-_walk_turn_right_(90)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 9/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B13_-_walk_turn_right_(45)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 10/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B14_-_walk_turn_right_(135)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 11/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B15_-_walk_turn_around_(same_direction)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 12/12 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B16_-_walk_turn_change_direction_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+[Skill: loco_walkonly] Loaded 12 motions with a total length of 95.200s.
+RL device:  cuda:0
+num_envs: 16
+num_actions: 32
+num_obs: 226
+num_states: 0
+{'observation_space': Box(-inf, inf, (226,), float32), 'action_space': Box(-1.0, 1.0, (32,), float32), 'agents': 1, 'value_size': 1}
+build mlp: 226
+build mlp: 226
+build mlp: 1290
+sigma
+actor_mlp.0.weight
+actor_mlp.0.bias
+actor_mlp.2.weight
+actor_mlp.2.bias
+critic_mlp.0.weight
+critic_mlp.0.bias
+critic_mlp.2.weight
+critic_mlp.2.bias
+value.weight
+value.bias
+mu.weight
+mu.bias
+_disc_mlp.0.weight
+_disc_mlp.0.bias
+_disc_mlp.2.weight
+_disc_mlp.2.bias
+_disc_logits.weight
+_disc_logits.bias
+RunningMeanStd:  (226,)
+RunningMeanStd:  (129,)
+=> loading checkpoint 'output/single_task/ckpt_run_w1.pth' at device: cuda
+=> loading checkpoint 'output/single_task/ckpt_run_w1.pth' at device: cuda
+reward: 202.00595092773438 steps: 299.0
+reward: 196.8261260986328 steps: 299.0
+reward: 202.1691436767578 steps: 299.0
+reward: -3.7491636276245117 steps: 14.0
+reward: 15.028759002685547 steps: 74.0
+reward: 202.48064313616072 steps: 299.0
+reward: 220.8255157470703 steps: 299.0
+reward: 208.0004119873047 steps: 299.0
+reward: 16.327890396118164 steps: 104.0
+reward: 192.70710637019232 steps: 299.0
+reward: 201.2420196533203 steps: 299.0
+reward: 184.1715087890625 steps: 299.0
+reward: 224.10678100585938 steps: 299.0
+reward: 212.54465895432693 steps: 299.0
+reward: 212.7818603515625 steps: 299.0
+reward: 213.0421142578125 steps: 299.0
+reward: 221.20980834960938 steps: 299.0
+reward: 197.55889423076923 steps: 299.0
+reward: 191.3897247314453 steps: 299.0
+reward: 217.0848846435547 steps: 299.0
+reward: 203.01092529296875 steps: 299.0
+reward: 207.65345177283655 steps: 299.0
+reward: 242.44146728515625 steps: 299.0
+reward: 238.8780975341797 steps: 299.0
+reward: 176.1348876953125 steps: 299.0
+reward: 203.0779747596154 steps: 299.0
+reward: 205.29147338867188 steps: 299.0
+reward: 212.36273193359375 steps: 299.0
+reward: 213.2652587890625 steps: 299.0
+reward: 206.31073467548077 steps: 299.0
+reward: 218.77627563476562 steps: 299.0
+reward: 228.2893524169922 steps: 299.0
+reward: 190.55490112304688 steps: 299.0
+reward: 198.31867863581732 steps: 299.0
+reward: 234.47836303710938 steps: 299.0
+reward: 165.54678344726562 steps: 299.0
+reward: 237.02069091796875 steps: 299.0
+reward: 207.44373497596155 steps: 299.0
+reward: 204.03672790527344 steps: 299.0
+reward: 199.35362243652344 steps: 299.0
+reward: 238.39222717285156 steps: 299.0
+reward: 205.22209284855768 steps: 299.0
+reward: 213.57418823242188 steps: 299.0
+reward: 187.40528869628906 steps: 299.0
+reward: 214.87484741210938 steps: 299.0
+reward: 213.90057842548077 steps: 299.0
+reward: 223.82156372070312 steps: 299.0
+reward: 134.74859619140625 steps: 299.0
+reward: 229.06121826171875 steps: 299.0
+reward: 185.7984900841346 steps: 299.0
+reward: 190.27297973632812 steps: 299.0
+reward: 197.5720672607422 steps: 299.0
+reward: 157.2703857421875 steps: 299.0
+reward: 191.79240534855768 steps: 299.0
+reward: 167.2593994140625 steps: 299.0
+/home/yued/miniconda3/envs/tokenhsi/lib/python3.8/site-packages/gym/spaces/box.py:127: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+reward: 189.48037719726562 steps: 299.0
+reward: 231.1038818359375 steps: 299.0
+reward: 212.8207068810096 steps: 299.0
+reward: 165.60826110839844 steps: 299.0
+reward: -3.2211694717407227 steps: 27.0
+reward: 143.83287048339844 steps: 299.0
+reward: 220.52764892578125 steps: 299.0
+reward: 191.4708251953125 steps: 299.0
+reward: 206.32537841796875 steps: 299.0
+reward: 166.93214416503906 steps: 299.0
+reward: 209.07945251464844 steps: 299.0
+reward: 187.78939819335938 steps: 299.0
+reward: 204.91642252604166 steps: 299.0
+reward: 194.26113891601562 steps: 299.0
+reward: 240.6609649658203 steps: 299.0
+reward: 187.01451110839844 steps: 299.0
+reward: 188.90701293945312 steps: 299.0
+reward: 196.1485392252604 steps: 299.0
+reward: 245.03817749023438 steps: 299.0
+reward: 234.54306030273438 steps: 299.0
+reward: 201.6302032470703 steps: 299.0
+reward: 216.01449584960938 steps: 299.0
+reward: 216.30242919921875 steps: 299.0
+reward: 185.08314514160156 steps: 299.0
+reward: 227.6197509765625 steps: 299.0
+reward: 241.90139770507812 steps: 299.0
+reward: 211.85011291503906 steps: 299.0
+reward: 203.52813720703125 steps: 299.0
+reward: 199.62245178222656 steps: 299.0
+reward: 194.11276245117188 steps: 299.0
+reward: 204.78091430664062 steps: 299.0
+reward: 204.9996337890625 steps: 299.0
+reward: 201.27490234375 steps: 299.0
+reward: 207.2982635498047 steps: 299.0
+reward: 206.0861053466797 steps: 299.0
+reward: 181.28846740722656 steps: 299.0
+reward: 200.19744873046875 steps: 299.0
+reward: 196.83565266927084 steps: 299.0
+reward: 204.73507690429688 steps: 299.0
+reward: 191.25791931152344 steps: 299.0
+reward: 157.6856231689453 steps: 299.0
+reward: 210.59555053710938 steps: 299.0
+reward: 196.2027587890625 steps: 299.0
+Traceback (most recent call last):
+  File "./tokenhsi/run.py", line 304, in <module>
+    main()
+  File "./tokenhsi/run.py", line 298, in main
+    runner.run(vargs)
+  File "/home/yued/miniconda3/envs/tokenhsi/lib/python3.8/site-packages/rl_games/torch_runner.py", line 144, in run
+    player.run()
+  File "/home/yued/TokenHSI/tokenhsi/learning/amp_players.py", line 160, in run
+    super().run()
+  File "/home/yued/TokenHSI/tokenhsi/learning/common_player.py", line 101, in run
+    obs_dict, r, done, info =  self.env_step(self.env, action)
+  File "/home/yued/TokenHSI/tokenhsi/learning/common_player.py", line 171, in env_step
+    obs, rewards, dones, infos = env.step(actions)
+  File "/home/yued/TokenHSI/tokenhsi/env/tasks/vec_task.py", line 129, in step
+    self.task.step(actions_tensor)
+  File "/home/yued/TokenHSI/tokenhsi/env/tasks/base_task.py", line 161, in step
+    self.post_physics_step()
+  File "/home/yued/TokenHSI/tokenhsi/env/tasks/basic_interaction_skills/humanoid_run.py", line 227, in post_physics_step
+    self._compute_amp_observations()
+  File "/home/yued/TokenHSI/tokenhsi/env/tasks/basic_interaction_skills/humanoid_run.py", line 506, in _compute_amp_observations
+    self._curr_amp_obs_buf[:] = build_amp_observations(self._rigid_body_pos[:, 0, :],
+KeyboardInterrupt
