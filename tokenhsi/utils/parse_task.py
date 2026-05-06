@@ -34,6 +34,7 @@ from env.tasks.basic_interaction_skills.humanoid_traj import HumanoidTraj
 from env.tasks.basic_interaction_skills.humanoid_sit import HumanoidSit
 from env.tasks.basic_interaction_skills.humanoid_carry import HumanoidCarry
 from env.tasks.basic_interaction_skills.humanoid_climb import HumanoidClimb
+from env.tasks.basic_interaction_skills.humanoid_run import HumanoidRun
 #########
 
 ######### multi task
