@@ -25,13 +25,13 @@ env:
   enableSelfCollisionDetection: True
   enableTrackInitState: False
   
-  skill: "loco_walkonly"
+  skill: "loco_run"   # W2: walk + jog/run mixed under single skill key
 
   enableTaskObs: True
 
   # Run task: track instantaneous target velocity (heading + speed)
   speedMin: 0.5
-  speedMax: 1.5
+  speedMax: 3.5            # W2: 0.5 (slow walk) ~ 3.5 m/s (sprint)
   targetChangeProb: 0.005   # per-step probability of resampling target
 
   # power reward
