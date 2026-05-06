@@ -184,3 +184,25 @@ motions:
       start: 220
       end: 400
       stateInitRange: 0.5555
+
+  # ── HumanoidRun (W2 phase): jog/run/sprint candidates from AMASS
+  # Confidence legend in spec §6.2.1:
+  #   green  = high confidence (e.g. ACCAD canonical naming)
+  #   yellow = medium (subset present, exact filename TBD)
+  #   red    = low (file numbers guessed; verify with check_amass_files.py)
+  run:
+    # ── ACCAD: high-confidence canonical naming
+    - "ACCAD+__+Female1Running_c3d+__+C3_-_Run_stageii.npz"            # green
+    - "ACCAD+__+Female1Running_c3d+__+C5_-_Walk_to_run_stageii.npz"    # green
+    - "ACCAD+__+Female1Running_c3d+__+C2_-_Run_to_stand_t2_stageii.npz"# yellow
+    - "ACCAD+__+Male2Running_c3d+__+C3_-_run_stageii.npz"              # green
+    - "ACCAD+__+Male2Running_c3d+__+C9_-_run_to_walk_stageii.npz"      # yellow
+    # ── CMU: subject 09 famous for run; exact file numbers verify
+    - "CMU+__+09+__+09_05_stageii.npz"  # yellow
+    - "CMU+__+09+__+09_06_stageii.npz"  # yellow
+    - "CMU+__+09+__+09_09_stageii.npz"  # yellow
+    - "CMU+__+02+__+02_03_stageii.npz"  # red - guessed
+    - "CMU+__+35+__+35_17_stageii.npz"  # red - guessed
+    # ── BMLrub: jogging file numbers guessed
+    - "BMLrub+__+rub002+__+0027_jogging1_stageii.npz"  # red
+    - "BMLrub+__+rub075+__+0027_jogging1_stageii.npz"  # red
