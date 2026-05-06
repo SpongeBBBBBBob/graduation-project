@@ -108,6 +108,20 @@ W2 reward 比 W1 低，因为速度区间宽 2.3×，平均 tracking 难度更�
 | `output/single_task/comp_w1_at_w2speed.log` | Cell B: W1 ckpt @ W2 速度 |
 | `output/single_task/comp_w2_at_w1speed.log` | Cell C: W2 ckpt @ W1 速度 |
 
+### 视频归档（W2 ckpt，4 个固定速度演示）
+
+每段 300 帧 / 5s 视频（30Hz 仿真，60Hz 视频）。同时输出 mp4 与 gif（gif 缩放 50%）。
+
+| 速度 | 标签 | mp4 | gif |
+|---|---|---|---|
+| 1.0 m/s | walk | `output/run_videos/run_w2_speed_1.0_walk.mp4` | `.gif` |
+| 1.8 m/s | fastwalk / jog 过渡 | `output/run_videos/run_w2_speed_1.8_fastwalk_jog.mp4` | `.gif` |
+| 2.5 m/s | jog | `output/run_videos/run_w2_speed_2.5_jog.mp4` | `.gif` |
+| 3.5 m/s | sprint | `output/run_videos/run_w2_speed_3.5_sprint.mp4` | `.gif` |
+
+录制配置（4 个临时 yaml）：`tokenhsi/data/cfg/basic_interaction_skills/amp_humanoid_run_video_s{10,18,25,35}.yaml`，关键差异是 `speedMin == speedMax == 固定值`、`targetChangeProb=0`。
+批量录制脚本：`tokenhsi/scripts/single_task/run_test_save_video_4speeds.sh`（依赖 X11/X410）。
+
 ### 文档
 
 - `docs/superpowers/specs/2026-05-05-humanoid-run-design.md` (设计文档 v2, 409 行)
