@@ -1,0 +1,377 @@
+Importing module 'gym_38' (/home/yued/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /home/yued/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.0.0.post304
+Device count 10
+/home/yued/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /home/yued/.cache/torch_extensions/py38_cu118 as PyTorch extensions root...
+Emitting ninja build file /home/yued/.cache/torch_extensions/py38_cu118/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+2026-05-06 18:34:40,080 - INFO - logger - logger initialized
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Error: FBX library failed to load - importing FBX data will not succeed. Message: No module named 'fbx'
+FBX tools must be installed from https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html
+MOVING MOTION DATA TO GPU, USING CACHE: True
+Importing module 'rlgpu_38' (/home/yued/isaacgym/python/isaacgym/_bindings/linux-x86_64/rlgpu_38.so)
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+Setting seed: 3924
+Started to play
+Loading 1/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B1_-_stand_to_walk_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 2/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B2_-_walk_to_stand_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 3/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B2_-_walk_to_stand_t2_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 4/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B3_-_walk1_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 5/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B9_-_walk_turn_left_(90)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 6/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B10_-_walk_turn_left_(45)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 7/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B11_-_walk_turn_left_(135)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 8/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B12_-_walk_turn_right_(90)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 9/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B13_-_walk_turn_right_(45)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 10/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B14_-_walk_turn_right_(135)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 11/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B15_-_walk_turn_around_(same_direction)_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 12/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_loco/motions/ACCAD/ACCAD+__+Female1Walking_c3d+__+B16_-_walk_turn_change_direction_stageii/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 13/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C11 -  run turn left (90)_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 14/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C13 -  run turn left (135)_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 15/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C2 - Run to stand_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 16/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C3 - Run_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 17/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C4 - Run to walk1_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 18/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Female1Running_c3d+__+C5 - walk to run_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 19/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Male2Running_c3d+__+C11 - run turn left 90_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 20/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/ACCAD/ACCAD+__+Male2Running_c3d+__+C17 - run change direction_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 21/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/CMU/CMU+__+09+__+09_01_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 22/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/CMU/CMU+__+09+__+09_05_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 23/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/CMU/CMU+__+09+__+09_06_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 24/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/CMU/CMU+__+09+__+09_09_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 25/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/CMU/CMU+__+09+__+09_11_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 26/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/HumanEva/HumanEva+__+S1+__+Jog_1_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 27/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/HumanEva/HumanEva+__+S2+__+Jog_1_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 28/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/HumanEva/HumanEva+__+S3+__+Jog_1_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 29/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/KIT/KIT+__+3+__+walking_run02_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+Loading 30/30 motion files: tokenhsi/data/dataset_run/../dataset_amass_run/motions/KIT/KIT+__+3+__+walking_run04_poses/phys_humanoid_v3/ref_motion.npy
+Error for key= global_root_yaw_rotation
+Error for key= global_translation_xy
+Error for key= global_translation_xz
+Error for key= local_rotation_to_root
+Error for key= local_translation_to_root
+Error for key= root_translation_xy
+Total added 17
+[Skill: loco_run] Loaded 30 motions with a total length of 198.300s.
+RL device:  cuda:0
+num_envs: 16
+num_actions: 32
+num_obs: 226
+num_states: 0
+{'observation_space': Box(-inf, inf, (226,), float32), 'action_space': Box(-1.0, 1.0, (32,), float32), 'agents': 1, 'value_size': 1}
+build mlp: 226
+build mlp: 226
+build mlp: 1290
+sigma
+actor_mlp.0.weight
+actor_mlp.0.bias
+actor_mlp.2.weight
+actor_mlp.2.bias
+critic_mlp.0.weight
+critic_mlp.0.bias
+critic_mlp.2.weight
+critic_mlp.2.bias
+value.weight
+value.bias
+mu.weight
+mu.bias
+_disc_mlp.0.weight
+_disc_mlp.0.bias
+_disc_mlp.2.weight
+_disc_mlp.2.bias
+_disc_logits.weight
+_disc_logits.bias
+RunningMeanStd:  (226,)
+RunningMeanStd:  (129,)
+=> loading checkpoint 'output/single_task/ckpt_run_w2.pth' at device: cuda
+=> loading checkpoint 'output/single_task/ckpt_run_w2.pth' at device: cuda
+reward: 160.9991455078125 steps: 299.0
+reward: -1.4014066457748413 steps: 23.0
+reward: 1.932243824005127 steps: 50.0
+reward: 3.8324785232543945 steps: 71.0
+reward: 159.63414588341345 steps: 299.0
+reward: 173.3860321044922 steps: 299.0
+reward: 179.7784423828125 steps: 299.0
+reward: 157.0855255126953 steps: 299.0
+reward: 84.31393432617188 steps: 290.0
+reward: 155.36994425455728 steps: 299.0
+reward: -5.877176761627197 steps: 20.0
+reward: 183.04141235351562 steps: 299.0
+reward: 174.89613342285156 steps: 299.0
+reward: 154.8119659423828 steps: 299.0
+reward: 161.3665771484375 steps: 299.0
+reward: 164.6469060724432 steps: 299.0
+reward: 169.48666381835938 steps: 299.0
+reward: 141.04888916015625 steps: 299.0
+reward: 127.55555725097656 steps: 299.0
+reward: 151.95748901367188 steps: 299.0
+reward: 120.02124786376953 steps: 299.0
+reward: 150.48497425426137 steps: 299.0
+reward: 187.1218719482422 steps: 299.0
+reward: 182.01028442382812 steps: 299.0
+reward: 217.74288940429688 steps: 299.0
+reward: 166.75540161132812 steps: 299.0
+reward: 197.27374267578125 steps: 299.0
+reward: 144.16532759232953 steps: 299.0
+reward: -13.823650360107422 steps: 11.0
+reward: 126.59506225585938 steps: 299.0
+reward: 181.02134704589844 steps: 299.0
+reward: 141.72732543945312 steps: 299.0
+reward: 157.39898681640625 steps: 299.0
+reward: 180.9569549560547 steps: 299.0
+reward: 174.79556884765626 steps: 299.0
+reward: 177.25656127929688 steps: 299.0
+reward: 141.18014526367188 steps: 299.0
+reward: 183.12106323242188 steps: 299.0
+reward: 165.84542846679688 steps: 299.0
+reward: 154.13638305664062 steps: 299.0
+reward: 186.9816131591797 steps: 299.0
+reward: 177.00765380859374 steps: 299.0
+reward: 162.1777801513672 steps: 299.0
+reward: 172.82894897460938 steps: 299.0
+reward: 144.742431640625 steps: 299.0
+reward: 166.2454071044922 steps: 299.0
+reward: 184.98960876464844 steps: 299.0
+reward: 165.73428344726562 steps: 299.0
+reward: 169.218115234375 steps: 299.0
+reward: 138.81146240234375 steps: 299.0
+reward: 42.251712799072266 steps: 299.0
+reward: 156.42135620117188 steps: 299.0
+reward: 133.6795196533203 steps: 299.0
+reward: 181.92141723632812 steps: 299.0
+reward: 148.84658813476562 steps: 299.0
+reward: 160.45745849609375 steps: 299.0
+reward: 123.90733337402344 steps: 299.0
+reward: 154.5968475341797 steps: 299.0
+reward: 170.6482391357422 steps: 299.0
+reward: 107.3262939453125 steps: 299.0
+reward: 152.5944061279297 steps: 299.0
+reward: 17.716312408447266 steps: 92.0
+reward: 173.70516967773438 steps: 299.0
+reward: 146.35804443359376 steps: 299.0
+reward: 155.7907257080078 steps: 299.0
+reward: 179.6182861328125 steps: 299.0
+reward: 0.9757598042488098 steps: 28.0
+reward: 182.89663696289062 steps: 299.0
+reward: 3.4944913387298584 steps: 46.0
+reward: 177.46189880371094 steps: 299.0
+reward: 148.73829650878906 steps: 299.0
+reward: 210.579345703125 steps: 299.0
+reward: 164.64500596788196 steps: 299.0
+reward: 147.89341735839844 steps: 299.0
+reward: 142.61080932617188 steps: 299.0
+reward: 206.8736114501953 steps: 299.0
+reward: 
