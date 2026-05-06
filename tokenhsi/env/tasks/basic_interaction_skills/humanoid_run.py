@@ -371,12 +371,12 @@ class HumanoidRun(Humanoid):
         return
 
     def _reset_actors(self, env_ids):
-        if (self._state_init == HumanoidTraj.StateInit.Default):
+        if (self._state_init == HumanoidRun.StateInit.Default):
             self._reset_default(env_ids)
-        elif (self._state_init == HumanoidTraj.StateInit.Start
-              or self._state_init == HumanoidTraj.StateInit.Random):
+        elif (self._state_init == HumanoidRun.StateInit.Start
+              or self._state_init == HumanoidRun.StateInit.Random):
             self._reset_ref_state_init(env_ids)
-        elif (self._state_init == HumanoidTraj.StateInit.Hybrid):
+        elif (self._state_init == HumanoidRun.StateInit.Hybrid):
             self._reset_hybrid_state_init(env_ids)
         else:
             assert(False), "Unsupported state initialization strategy: {:s}".format(str(self._state_init))
@@ -399,10 +399,10 @@ class HumanoidRun(Humanoid):
         num_envs = env_ids.shape[0]
         motion_ids = self._motion_lib.sample_motions(num_envs)
         
-        if (self._state_init == HumanoidTraj.StateInit.Random
-            or self._state_init == HumanoidTraj.StateInit.Hybrid):
+        if (self._state_init == HumanoidRun.StateInit.Random
+            or self._state_init == HumanoidRun.StateInit.Hybrid):
             motion_times = self._motion_lib.sample_time(motion_ids)
-        elif (self._state_init == HumanoidTraj.StateInit.Start):
+        elif (self._state_init == HumanoidRun.StateInit.Start):
             motion_times = torch.zeros(num_envs, device=self.device)
         else:
             assert(False), "Unsupported state initialization strategy: {:s}".format(str(self._state_init))
